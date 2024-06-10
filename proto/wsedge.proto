@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package edge_rpc;
+
+option go_package = "edge_grpc/proto";
+
+service EdgeService {
+  rpc RecordCan(stream CanData) returns (Empty) {}
+}
+
+message CanData {
+  bool c000 = 1;
+  bool c001 = 2;
+  bool c002 = 3;
+}
+
+message Empty {}
